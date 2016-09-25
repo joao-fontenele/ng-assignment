@@ -33,7 +33,7 @@
   <div class="row">
 
     <!-- To Buy List -->
-    <div class="col-md-6">
+    <div class="col-md-6" ng-controller="ToBuyShoppingController as toBuyCtrlr">
      <h2>To Buy:</h2>
      <ul>
        <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
@@ -43,7 +43,7 @@
     </div>
 
     <!-- Already Bought List -->
-    <div class="col-md-6">
+    <div class="col-md-6" ng-controller="AlreadyBoughtShoppingController as boughtCtrlr">
      <h2>Already Bought:</h2>
      <ul>
        <li>Bought 10 cookies</li>
