@@ -6,18 +6,24 @@ angular.module('ShoppingListCheckOff', [])
 .controller('AlreadyBoughtShoppingController', AlreadyBoughtShoppingController)
 .service('checkOffService', ShoppingListCheckOffService);
 
-// TODO
-ToBuyShoppingController.$inject = ['$scope', 'checkOffService'];
-function ToBuyShoppingController($scope, checkOffService) {
+ToBuyShoppingController.$inject = ['checkOffService'];
+function ToBuyShoppingController(checkOffService) {
     var toBuyCtrlr = this;
 
+    toBuyCtrlr.toBuyList = checkOffService.getToBuyList();
+    console.log('initial toBuyList:', toBuyCtrlr.toBuyList);
+
+    toBuyCtrlr.buy = function(index) {
+        checkOffService.buy(index);
+    };
 }
 
-// TODO
-AlreadyBoughtShoppingController.$inject = ['$scope', 'checkOffService'];
-function AlreadyBoughtShoppingController($scope, checkOffService) {
+AlreadyBoughtShoppingController.$inject = ['checkOffService'];
+function AlreadyBoughtShoppingController(checkOffService) {
     var boughtCtrlr = this
 
+    boughtCtrlr.boughtList = checkOffService.getBoughtList();
+    console.log('initial boughtList:', boughtCtrlr.boughtList);
 }
 
 function ShoppingListCheckOffService() {
@@ -51,25 +57,30 @@ function ShoppingListCheckOffService() {
         if (index === undefined || toBuy[index] === undefined) {
             throw new Error('Invalid index to buy(' + index + ')');
         } else {
-            var item = toBuy.splice(index, 1);
+            var item = toBuy.splice(index, 1)[0];
             bought.push(item);
+
+            console.log('on checkOffService, \n\titem with index(' + index +
+                  ') bought:', item);
+            console.log('\tupdated toBuyList:', toBuy);
+            console.log('\tupdated boughtList:', bought);
         }
     };
 
     service.addToBuy = function(item) {
         if (!item.name || !item.quantity) {
-            throw new Error('Invalid item, need name and quantity properties.',
-                  item);
+            throw new Error('Invalid item, need "name" and "quantity"' +
+                ' properties.', item);
         } else {
             toBuy.push(item);
         }
-    }
+    };
 
-    service.getToBuyList() = function() {
+    service.getToBuyList = function() {
         return toBuy;
     };
 
-    service.getBoughtList() = function() {
+    service.getBoughtList = function() {
         return bought;
     };
 }
