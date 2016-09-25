@@ -37,6 +37,6 @@
             $scope.result = 'Too Much!';
           }
         }
-      }
+      };
   }
 })();
