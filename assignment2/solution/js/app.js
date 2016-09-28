@@ -10,12 +10,10 @@ ToBuyShoppingController.$inject = ['checkOffService'];
 function ToBuyShoppingController(checkOffService) {
     var toBuyCtrlr = this;
 
+    toBuyCtrlr.buy = checkOffService.buy;
+
     toBuyCtrlr.toBuyList = checkOffService.getToBuyList();
     console.log('initial toBuyList:', toBuyCtrlr.toBuyList);
-
-    toBuyCtrlr.buy = function(index) {
-        checkOffService.buy(index);
-    };
 }
 
 AlreadyBoughtShoppingController.$inject = ['checkOffService'];
@@ -28,6 +26,15 @@ function AlreadyBoughtShoppingController(checkOffService) {
 
 function ShoppingListCheckOffService() {
     var service = this;
+
+    service.addToBuy = addToBuy;
+    service.buy = buy;
+    service.getBoughtList = function() {
+        return bought;
+    };
+    service.getToBuyList = function() {
+        return toBuy;
+    };
 
     var toBuy = [
         {
@@ -53,7 +60,16 @@ function ShoppingListCheckOffService() {
     ];
     var bought = [];
 
-    service.buy = function(index) {
+    function addToBuy(item) {
+        if (!item.name || !item.quantity) {
+            throw new Error('Invalid item, need "name" and "quantity"' +
+                ' properties.', item);
+        } else {
+            toBuy.push(item);
+        }
+    }
+
+    function buy(index) {
         if (index === undefined || toBuy[index] === undefined) {
             throw new Error('Invalid index to buy(' + index + ')');
         } else {
@@ -65,24 +81,7 @@ function ShoppingListCheckOffService() {
             console.log('\tupdated toBuyList:', toBuy);
             console.log('\tupdated boughtList:', bought);
         }
-    };
-
-    service.addToBuy = function(item) {
-        if (!item.name || !item.quantity) {
-            throw new Error('Invalid item, need "name" and "quantity"' +
-                ' properties.', item);
-        } else {
-            toBuy.push(item);
-        }
-    };
-
-    service.getToBuyList = function() {
-        return toBuy;
-    };
-
-    service.getBoughtList = function() {
-        return bought;
-    };
+    }
 }
 
 })();
