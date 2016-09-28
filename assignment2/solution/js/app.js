@@ -20,7 +20,7 @@ function ToBuyShoppingController(checkOffService) {
 
 AlreadyBoughtShoppingController.$inject = ['checkOffService'];
 function AlreadyBoughtShoppingController(checkOffService) {
-    var boughtCtrlr = this
+    var boughtCtrlr = this;
 
     boughtCtrlr.boughtList = checkOffService.getBoughtList();
     console.log('initial boughtList:', boughtCtrlr.boughtList);
