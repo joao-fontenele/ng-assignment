@@ -10,6 +10,12 @@
       "paths": "",
       "override": ""
     },
-    "commonjs": {}
+    "commonjs": {},
+    "modules": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    },
+    "es_modules": {}
   }
 }

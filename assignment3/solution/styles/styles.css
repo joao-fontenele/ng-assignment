@@ -50,3 +50,47 @@ input[type="text"] {
     transform: rotate(360deg);
   }
 }
+
+.menuList {
+    box-sizing: border-box;
+    margin-top: 20px;
+    clear: both;
+}
+
+.menuItem {
+    padding: 0;
+    border: 1px solid black;
+    margin-top: 15px;
+    min-height: 150px;
+}
+
+.menuItem > button {
+    margin: 10px auto;
+    display: block;
+    position: relative;;
+    bottom: 0;
+}
+
+.menuItemTitle {
+    min-width: 200px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    float: right;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    background-color: #337ab7;
+}
+
+.menuItemDescription {
+    text-align: center;
+    clear: both;
+    padding: 10px;
+}
+
+.message {
+    clear: both;
+    font-size: 1.1em;
+}

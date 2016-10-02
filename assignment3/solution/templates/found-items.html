@@ -1,0 +1,13 @@
+<div class="row menuList">
+    <h2 ng-if="ctrlr.items.length"> Found Menu Items </h2>
+    <div class="col-md-4 menuItem" ng-repeat-start="item in ctrlr.items">
+        <h3 class="menuItemTitle">{{ item.name }} [{{ item.short_name }}]</h3>
+        <p class="menuItemDescription">{{ item.description }}</p>
+        <button type="button" ng-click="ctrlr.onRemove({index: $index});">
+            <span class="glyphicon glyphicon-remove-sign"></span>
+            Don't want this one!
+        </button>
+    </div>
+    <div class="clearfix" ng-if="$index % 3 === 2"></div>
+    <div ng-repeat-end=""></div>
+</div>
