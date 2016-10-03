@@ -7,8 +7,8 @@ angular.module('NarrowItDownApp')
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService', MenuSearchService)
     .directive('foundItems', FoundItemsDirective)
-    // .constant('baseApiUrl', 'https://davids-restaurant.herokuapp.com/');
-    .constant('baseApiUrl', 'http://localhost:8888/');
+    .constant('baseApiUrl', 'https://davids-restaurant.herokuapp.com/');
+    // .constant('baseApiUrl', 'http://localhost:8888/');
 
 function FoundItemsDirective() {
     var ddo = {
