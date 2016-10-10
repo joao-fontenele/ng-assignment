@@ -1,0 +1,8 @@
+<ul class="clickable-list">
+    <li
+        ng-repeat="category in $ctrl.categories"
+        ui-sref="menu({categoryShortName: category.short_name})"
+    >
+        ({{category.short_name}}) {{category.name}}
+    </li>
+</ul>

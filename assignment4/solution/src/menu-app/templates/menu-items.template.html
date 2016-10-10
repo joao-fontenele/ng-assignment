@@ -1,0 +1,12 @@
+<h3 class="text-center">Menu Items for {{menuCtrl.categoryName}}</h3>
+
+<div class="">
+    <a ui-sref="home">Home</a> < 
+    <a ui-sref="categories">Categories</a>
+</div>
+
+
+<ui-view></ui-view>
+
+<menu-items-list menu-items="menuCtrl.menuItems">
+</menu-items-list>

@@ -1,0 +1,12 @@
+<ul class="clickable-list">
+    <li
+        ng-repeat="menuItem in $ctrl.menuItems"
+    >
+        <div ui-sref="menu.details({
+            menuIndex: $index
+        })">
+            <span>({{menuItem.short_name}}) </span>
+            <span>{{menuItem.name}}</span>
+        <div>
+    </li>
+</ul>

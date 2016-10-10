@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MenuApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Module 4 Solution</title>
+
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <div class="main-content">
+            <ui-view></ui-view>
+        </div>
+
+
+        <!-- libs -->
+        <script src="./lib/angular.min.js" charset="utf-8"></script>
+        <script src="./lib/angular-ui-router.min.js" charset="utf-8"></script>
+
+        <!-- modules -->
+        <script src="./src/menu-app/menu-app.module.js" charset="utf-8"></script>
+
+        <!-- routes -->
+        <script src="./src/routes.js" charset="utf-8"></script>
+
+        <!-- artifacts -->
+        <script src="./src/menu-app/categories.controller.js" charset="utf-8"></script>
+        <script src="./src/menu-app/categories.service.js" charset="utf-8"></script>
+        <script src="./src/menu-app/categories-list.component.js" charset="utf-8"></script>
+
+        <script src="./src/menu-app/menu-items.controller.js" charset="utf-8"></script>
+        <script src="./src/menu-app/menu-items.service.js" charset="utf-8"></script>
+        <script src="./src/menu-app/menu-items-list.component.js" charset="utf-8"></script>
+
+        <script src="./src/menu-app/menu-item-details.controller.js" charset="utf-8"></script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.menu-details {
+    margin-bottom: 20px;
+}
+
+.clickable-list li {
+    vertical-align: middle;
+}
+
+ul, ol {
+    margin-top: 20px
+}
+
+.clickable-list li:hover {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.main-content {
+    padding: 20px;
+}

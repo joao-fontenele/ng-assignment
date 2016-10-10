@@ -1,0 +1,8 @@
+<div class="menu-details">
+    <h4 ng-if="detailsCtrl.menuItem">Menu Item details</h4>
+    <li ng-if="detailsCtrl.menuItem.name"><em>name:</em> ({{detailsCtrl.menuItem.short_name}}) {{detailsCtrl.menuItem.name}}</li>
+    <li ng-if="detailsCtrl.menuItem.description"><em>description:</em> {{detailsCtrl.menuItem.description}}</li>
+    <li ng-if="detailsCtrl.menuItem.price_large"><em>price large:</em> {{detailsCtrl.menuItem.price_large}}</li>
+    <li ng-if="detailsCtrl.menuItem.price_small"><em>price small:</em> {{detailsCtrl.menuItem.price_small}}</li>
+    <li ng-if="detailsCtrl.menuItem.small_portion_name"><em>small portion name:</em> {{detailsCtrl.menuItem.small_portion_name}}</li>
+</div>
