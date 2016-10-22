@@ -7,7 +7,7 @@ angular.module('common')
 function InfoService() {
     var service = this;
 
-    service.info = {};
+    service.info = null;
 
     service.publish = publish;
     service.get = get;

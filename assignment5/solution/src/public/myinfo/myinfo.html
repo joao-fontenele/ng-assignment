@@ -1,0 +1,20 @@
+<p ng-if="!myInfoCtrl.signed">
+    <a ui-sref="public.signup">Not Signed Up Yet. Sign up Now!</a>
+</p>
+<div class="" ng-if="myInfoCtrl.signed">
+    <p>
+        Name: {{myInfoCtrl.firstName}} {{myInfoCtrl.lastName}}
+    </p>
+    <p>
+        Email: {{myInfoCtrl.email}}
+    </p>
+    <p>
+        Phone: {{myInfoCtrl.phone}}
+    </p>
+
+    <span>Favorite Dish</span>
+    <p class="row">
+        <menu-item menu-item="myInfoCtrl.menuItem"></menu-item>
+    </p>
+    </div>
+</div>

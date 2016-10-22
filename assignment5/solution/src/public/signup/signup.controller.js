@@ -13,7 +13,6 @@ function SignUpController(InfoService, $http, ApiPath) {
     vm.email = '';
     vm.phone = '';
     vm.shortName = '';
-    vm.validShortName = false;
     vm.saved = false;
 
     vm.publish = publish;
@@ -26,6 +25,7 @@ function SignUpController(InfoService, $http, ApiPath) {
         info.email = vm.email;
         info.phone = vm.phone;
         info.shortName = vm.shortName;
+        info.menuItem = vm.menuItem;
 
         InfoService.publish(info);
         console.log(InfoService.get());
@@ -37,6 +37,7 @@ function SignUpController(InfoService, $http, ApiPath) {
             .then(function(response) {
                 console.log('response: ', response);
                 vm.validShortName = true;
+                vm.menuItem = response.data;
             })
             .catch(function(err) {
                 console.log('failed to get shortName', vm.shortName, err);
