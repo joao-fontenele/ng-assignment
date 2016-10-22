@@ -1,0 +1,27 @@
+
+<div class="container">
+    <form name="signupForm" class="row" novalidate>
+        <label for="firstName" class="">First Name</label>
+        <input class="" type="text" name="firstName" ng-model="signupCtrl.firstName" required><br>
+
+        <label for="lastName" class="">Last Name</label>
+        <input class="" type="text" name="lastName" ng-model="signupCtrl.lastName" required><br>
+
+        <label for="email" class="">Emai</label>
+        <input class="" type="email" name="email" ng-model="signupCtrl.email" required><br>
+
+        <label for="phone" class="">Phone</label>
+        <input class="" type="tel" name="phone" ng-model="signupCtrl.phone" required><br>
+
+        <label for="shortName" class="">Favorite Dish</label>
+        <input class="" type="text" name="shortName" ng-model="signupCtrl.shortName" required ng-blur="signupCtrl.isValidShortName()">
+        <span class="help-block" ng-if="signupForm.shortName.$touched && !signupCtrl.validShortName">No such menu number exists</span><br>
+
+        <input class="" ng-disabled="signupForm.$invalid || !signupCtrl.validShortName" ng-click="signupCtrl.publish()" type="submit">
+
+        <p ng-if="signupCtrl.saved && signupForm.$valid">
+            Your information has been saved
+        </p>
+    </form>
+
+</div>

@@ -114,6 +114,20 @@ h3.menu-item-title {
 /* END SINGLE CATEGORY PAGE */
 
 
+/* forms styles */
+form {
+    color: black;
+    margin: 20px auto;
+}
+
+.ng-touched.ng-invalid {
+    border: 2px solid red;
+}
+
+.ng-touched.ng-valid {
+    border: 2px solid green;
+}
+
 /********** Large devices only **********/
 @media (min-width: 1200px) {
   .container .jumbotron {
